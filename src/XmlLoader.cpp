@@ -48,6 +48,7 @@ void XmlLoader::forEachNodeNamed(const std::string &name, std::function<void(voi
 	while(this->currentNode != nullptr)
 	{
 		lambda();
+		this->onNode = true;
 		this->currentNode = this->currentNode->NextSiblingElement(name.c_str());
 	}
 	this->prev();
